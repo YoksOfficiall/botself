@@ -74,7 +74,7 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
 ╭─「 ${conn.getName(conn.user.jid)} 」
-│ Hai, %name!
+│ Hai, %name! Ｉｍ Ｙｏｋｓ
 │
 │ *%exp XP*
 │ Tersisa *%limit Limit*
@@ -85,8 +85,8 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
 │ Uptime: *%uptime*
 │ Main Uptime: *%muptime*
 │ Database: %totalreg nomor
-│ Github:
-│ %github
+│ Instagram:
+│ https://instagram.com/bel_abelll19
 ╰────
 %readmore`
     let header = conn.menu.header || '╭─「 %category 」'
