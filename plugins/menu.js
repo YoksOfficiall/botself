@@ -73,25 +73,30 @@ let handler  = async (m, { conn, usedPrefix: _p }) => {
     }
     conn.menu = conn.menu ? conn.menu : {}
     let before = conn.menu.before || `
-╭─「 ${conn.getName(conn.user.jid)} 」
-│ Hai, %name! Ｉｍ Ｙｏｋｓ
-│
-│ *%exp XP*
-│ Tersisa *%limit Limit*
-│
-│ Tanggal: *%week %weton, %date*
-│ Waktu: *%time*
-│
-│ Uptime: *%uptime*
-│ Main Uptime: *%muptime*
-│ Database: %totalreg nomor
-│ Instagram:
-│ https://instagram.com/bel_abelll19
-╰────
+┏━「 ${conn.getName(conn.user.jid)} 」
+┃╭─────────────
+┃├
+┃├⊱❥Hai, %name! Ｉｍ Ｙｏｋｓ
+┃├
+┃├⊱❥ *%exp XP*
+┃├⊱❥ Tersisa *%limit Limit*
+┃├
+┃├⊱❥Tanggal: *%week %weton, %date*
+┃├⊱❥ Waktu: *%time*
+┃├
+┃├⊱❥ Uptime: *%uptime*
+┃├⊱❥ Main Uptime: *%muptime*
+┃├⊱❥ Database: %totalreg nomor
+┃├⊱❥ Instagram:
+┃├⊱❥ https://instagram.com/bel_abelll19
+┃╰──────────────
+┗━━━━━━━━━━━━━━━
 %readmore`
-    let header = conn.menu.header || '╭─「 %category 」'
-    let body   = conn.menu.body   || '│ • %cmd%islimit'
-    let footer = conn.menu.footer || '╰────\n'
+    let header = conn.menu.header || '┏━「 %category 」'
+    let body   = conn.menu.body   || '┃╭───────'
+    let body   = conn.menu.body   || '┃├⊱❥ %cmd%islimit'
+    let footer = conn.menu.footer || '┃╰───────'
+    let footer = conn.menu.footer || '┗━━━━━━━┛\n'
     let after  = conn.menu.after  || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + `\n*%npmname@^%version*\n\`\`\`\%npmdesc\`\`\``
     let _text  = before + '\n'
     for (let tag in groups) {
